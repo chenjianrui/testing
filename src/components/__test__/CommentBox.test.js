@@ -20,7 +20,7 @@ afterEach(() => {
 
 it('has a text area and button', () => {
   expect(wrapped.find('textarea').length).toEqual(1);
-  expect(wrapped.find('button').length).toEqual(1);
+  expect(wrapped.find('button').length).toEqual(2);
 });
 
 // describe 將某些測試集合在一起，這邊使用的需求是因為有相同的測試邏輯

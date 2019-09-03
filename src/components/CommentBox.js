@@ -33,7 +33,12 @@ class CommentBox extends Component {
             <button>Submit Comment</button>
           </div>
         </form>
-        <button onClick={this.props.fetchComments}>Submit Fetch</button>
+        {/* 
+          新增一個 className 是因為測試時要分辨上面那個 button 用的
+         */}
+        <button className="fetchComments" onClick={this.props.fetchComments}>
+          Submit Fetch
+        </button>
       </div>
     );
   }
