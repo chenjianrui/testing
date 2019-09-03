@@ -25,7 +25,7 @@ it('can fetch a list of comments and display them', done => {
 
   wrapped.find('.fetchComments').simulate('click');
 
-  // 這邊的 setTimeout 是模擬非同步事件需要等待 response 的時間
+  // 這邊的 moxios.wait 是模擬非同步事件需要等待 response 的時間
   moxios.wait(() => {
     // 先更新畫面
     wrapped.update();
