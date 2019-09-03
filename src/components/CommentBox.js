@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { saveComment } from 'actions';
+import { saveComment, fetchComments } from 'actions';
 
 class CommentBox extends Component {
   state = {
@@ -25,20 +25,24 @@ class CommentBox extends Component {
   render() {
     const { comment } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h4>Add a Comment</h4>
-        <textarea onChange={this.handleChange} value={comment} />
-        <div>
-          <button>Submit Comment</button>
-        </div>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <h4>Add a Comment</h4>
+          <textarea onChange={this.handleChange} value={comment} />
+          <div>
+            <button>Submit Comment</button>
+          </div>
+        </form>
+        <button onClick={this.props.fetchComments}>Submit Fetch</button>
+      </div>
     );
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    saveComment: comment => dispatch(saveComment(comment))
+    saveComment: comment => dispatch(saveComment(comment)),
+    fetchComments: () => dispatch(fetchComments())
   };
 };
 
